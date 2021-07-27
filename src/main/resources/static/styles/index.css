@@ -1,0 +1,214 @@
+:root{
+    --background: #F0F2F5;
+    --red: #E52E4D;
+    --green: #33CC95;
+    --blue: #5429CC;
+    --blue-light: #6933FF;
+    --text-title: #363F5F;
+    --text-body: #969CB3;
+    --shape: #FFFFFF;
+
+
+}
+body{
+    background: var(--background);
+    margin: 0 auto;
+}
+
+header{
+
+    background: var(--blue);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1125px;
+    margin: 0 auto;
+    padding: 2rem 1rem 12rem;
+}
+
+nav button{
+    font-size: 1rem;
+    border: none;
+    background: var(--blue-light);
+    padding: 0 2rem;
+    color: #FFF;
+    border-radius: 0.25rem;
+    height: 3rem;
+    transition: filter 0.2s;
+}
+button:hover{
+    filter: brightness(0.9);
+}
+
+article{
+    max-width: 1125px;
+    margin: 0 auto;
+    margin-top: -7rem;
+
+}
+.summary{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.summary div{
+    background: var(--shape);
+    padding: 1.5rem 2rem;
+    border-radius: 0.25rem;
+    color: var(--text-title);
+}
+
+.summary header{
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.summary div strong{
+    display: block;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 3rem;
+}
+.summary div:last-child{
+    background: var(--green);
+    color: #FFF;
+}
+
+main{
+    max-width: 1125px;
+    margin: 0 auto;
+
+}
+table{
+    margin-top: 20px;
+
+    width: 100%;
+    border-spacing: 0 0.5rem;
+
+
+}
+th{
+    text-align: left;
+    color: var(--text-body);
+    font-weight: 400;
+    padding: 1rem 2rem;
+    line-height: 1.5rem;
+}
+
+td{
+    padding: 1rem 2rem;
+    border: 0;
+    background-color: var(--shape);
+    color: var(--text-body);
+    border-radius: 0.25rem;
+
+}
+
+td a{
+    text-decoration: none;
+    color: var(--text-body);
+    cursor: pointer;
+}
+
+.modal-overlay{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.25);
+    visibility: hidden;
+    opacity: 0;
+}
+.modal-overlay.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content{
+
+    width: 100%;
+    max-width: 576px;
+    background:  var(--background);
+    padding: 3rem;
+    position: relative;
+    border-radius: 0.25rem;
+
+}
+
+.modal-content .button-close{
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    border: 0;
+    background: transparent;
+
+    transition: filter 0.2s;
+}
+
+form h2{
+
+    color: var(--text-title);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+
+}
+input, select{
+    width: 100%;
+    margin: 0 auto;
+
+    height: 4rem;
+    border-radius: 0.25rem;
+
+    background: #e7e9ee;
+    border: 1px solid #d7d7d7;
+
+    font-weight: 400;
+    font-size: 1rem;
+
+}
+input + input{
+    margin-top: 1rem;
+}
+select{
+    margin-top: 1rem;
+}
+input::placeholder{
+    padding-left: .4rem;
+    font-size: .875rem;
+}
+
+button[type="submit"] {
+    cursor: pointer;
+    width: 100%;
+    padding: 0 1.5rem;
+    height: 4rem;
+    background:  var(--green);
+    color: #FFF;
+    border-radius: 0.25rem;
+    border: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: filter 0.2s;
+
+}
+button:hover{
+     filter: brightness(0.9);
+ }
+
+.form-edit{
+    margin-top: 20px;
+}
