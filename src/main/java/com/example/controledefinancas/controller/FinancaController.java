@@ -57,14 +57,14 @@ public class FinancaController {
         return "redirect:/";
     }
     @RequestMapping("/deletar/{id}")
-    public String deletar( @PathVariable(name = "id") Long id){
+    public String deletar( @PathVariable(name = "id") Integer id){
 
         service.delete(id);
         return "redirect:/";
     }
 
     @RequestMapping("/editar/{id}")
-    public ModelAndView getFormEdit(@PathVariable(name="id") Long id){
+    public ModelAndView getFormEdit(@PathVariable(name="id") Integer id){
         ModelAndView modelAndView = new ModelAndView("editar");
         Financa financa = service.findById(id);
         modelAndView.addObject("formFinanca", financa);

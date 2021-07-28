@@ -21,7 +21,7 @@ import javax.persistence.Entity;
 public class Financa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    Integer id;
     String title;
     double amount;
     String category;

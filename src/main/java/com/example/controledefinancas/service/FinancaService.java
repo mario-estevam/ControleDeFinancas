@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public abstract class FinancaService {
+public class FinancaService {
 
     FinancaRepository repository;
     @Autowired
@@ -23,13 +23,13 @@ public abstract class FinancaService {
         return f;
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
         repository.deleteById(id);
     }
 
 
 
-    public Financa findById(Long id){
+    public Financa findById(Integer id){
         return repository.getById(id);
     }
 
@@ -82,11 +82,5 @@ public abstract class FinancaService {
         return entrada-saida;
     }
 
-    public abstract List<Financa> getAllFinanca();
 
-    public abstract Optional<Financa> getFinancaById(long id);
-
-    public abstract Financa saveFinanca(Financa Financa);
-
-    public abstract void removeFinanca(Financa Financa);
 }
