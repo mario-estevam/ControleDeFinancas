@@ -60,7 +60,7 @@
       <td className="deposit" th:text="${financa.title}">Desenvolvimento de Website</td>
       <td th:text="${financa.amount}"></td>
       <td th:text="${financa.category}"></td>
-      <td th:text="${financa.createdAt}">20/02/2021</td>
+      <td th:text="${financa.createdAt}"></td>
       <td>
         <a th:href="@{'/editar/' + ${financa.id}}"><span class="iconify" data-icon="akar-icons:edit" data-inline="false">  </span> </a>
         <a th:href="@{'/deletar/' + ${financa.id}}"> <span class="iconify" data-icon="carbon:delete" data-inline="false"></span></a>
@@ -76,6 +76,7 @@
       <h2>Cadastro de Finanças</h2>
       <input type="text" placeholder="Título" name="title" th:field="*{title}">
       <input type="text"  placeholder="Valor" name="amount" th:field="*{amount}">
+      <input type="text"  placeholder="Data" name="createdAt" th:field="*{createdAt}">
       <select th:field="*{category}">
         <option th:value="'Entrada'" th:text="Entrada"></option>
         <option th:value="'Saída'" th:text="Saída"></option>

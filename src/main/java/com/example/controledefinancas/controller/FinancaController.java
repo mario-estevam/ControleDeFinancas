@@ -1,11 +1,9 @@
-package com.example.controledefinancas.controledefinancas.controller;
+package com.example.controledefinancas.controller;
 
 
-import com.example.controledefinancas.controledefinancas.model.Financa;
-import com.example.controledefinancas.controledefinancas.service.FinancaService;
-import org.apache.coyote.Request;
-        import org.apache.coyote.Response;
-        import org.springframework.beans.factory.annotation.Autowired;
+import com.example.controledefinancas.model.Financa;
+import com.example.controledefinancas.service.FinancaService;
+import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Controller;
         import org.springframework.ui.Model;
         import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,7 +25,7 @@ public class FinancaController {
 
     @RequestMapping(value ={"/","/dashboard"} , method = RequestMethod.GET)
     public String getDashboard(Model model){
-        var listInputsAndOutpus = service.listAll();
+        var listInputsAndOutpus = service.findAll();
         model.addAttribute("Listfinanca", listInputsAndOutpus);
 
         Financa financa = new Financa();

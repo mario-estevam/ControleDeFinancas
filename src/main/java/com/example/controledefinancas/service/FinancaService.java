@@ -1,14 +1,16 @@
-package com.example.controledefinancas.controledefinancas.service;
+package com.example.controledefinancas.service;
 
-import com.example.controledefinancas.controledefinancas.model.Financa;
-import com.example.controledefinancas.controledefinancas.repository.FinancaRepository;
+import com.example.controledefinancas.model.Financa;
+import com.example.controledefinancas.repository.FinancaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
-public class FinancaService {
+public abstract class FinancaService {
 
     FinancaRepository repository;
     @Autowired
@@ -16,19 +18,22 @@ public class FinancaService {
         this.repository = repository;
     }
 
-    public void save(Financa financa){
-        repository.save(financa);
+    public Financa save(Financa f){
+        repository.save(f);
+        return f;
     }
 
     public void delete(Long id){
         repository.deleteById(id);
     }
 
+
+
     public Financa findById(Long id){
         return repository.getById(id);
     }
 
-    public List<Financa> listAll(){
+    public List<Financa> findAll(){
         return repository.findAll();
 
     }
@@ -77,4 +82,11 @@ public class FinancaService {
         return entrada-saida;
     }
 
+    public abstract List<Financa> getAllFinanca();
+
+    public abstract Optional<Financa> getFinancaById(long id);
+
+    public abstract Financa saveFinanca(Financa Financa);
+
+    public abstract void removeFinanca(Financa Financa);
 }

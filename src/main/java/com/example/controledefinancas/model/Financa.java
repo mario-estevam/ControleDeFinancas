@@ -1,4 +1,4 @@
-package com.example.controledefinancas.controledefinancas.model;
+package com.example.controledefinancas.model;
 
 
 import java.time.LocalDate;
@@ -25,7 +25,7 @@ public class Financa {
     String title;
     double amount;
     String category;
-    String Data;
+    String createdAt;
 
 
 
